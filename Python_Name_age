@@ -1,0 +1,20 @@
+from datetime import date
+
+full_name = input("Enter Your Full Name: ")
+
+while True:
+  try:
+    age = int(input("Enter Your Age (between 1 and 149): "))
+    if 1 <= age <= 149:
+      break  # Exit the loop if age is valid
+    else:
+      print("Invalid age. Please enter a number between 1 and 149.")
+  except ValueError:
+    print("Invalid input. Please enter a number for your age.")
+
+# Get today's date
+today = date.today()
+
+estimated_birth_year = today.year - age
+
+print(f"Aloha {full_name} you are {age} and your bday is {estimated_birth_year} ... winning!")
